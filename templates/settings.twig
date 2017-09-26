@@ -10,3 +10,11 @@
     value: settings['password'],
     errors: settings.getErrors('password')})
 }}
+{{ forms.textField({
+    label: 'Whitelisted IP adresses',
+    instructions: 'A comma separated list of IP adresses.',
+    id: 'whitelist',
+    name: 'whitelist',
+    value: settings['whitelist'],
+    errors: settings.getErrors('whitelist')})
+}}

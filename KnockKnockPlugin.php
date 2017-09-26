@@ -9,7 +9,7 @@
  * @copyright Copyright (c) 2017 Derrick Grigg
  * @link      https://dgrigg.com
  * @package   KnockKnock
- * @since     1.0.0
+ * @since     1.0.1
  */
 
 namespace Craft;
@@ -45,7 +45,7 @@ class KnockKnockPlugin extends BasePlugin
      */
     public function getVersion()
     {
-        return '1.0.0';
+        return '1.0.1';
     }
 
     /**
@@ -58,7 +58,7 @@ class KnockKnockPlugin extends BasePlugin
      */
     public function getSchemaVersion()
     {
-        return '1.0.0';
+        return '1.0.1';
     }
 
     /**
@@ -100,6 +100,7 @@ class KnockKnockPlugin extends BasePlugin
     {
         return array(
             'password' => array(AttributeType::String, 'label' => 'Password', 'default' => '', 'required' => true, 'minLength' => 8),
+			'whitelist' => array(AttributeType::String, 'label' => 'Whitelisted IP adresses', 'default' => '', 'required' => false),
         );
     }
 
@@ -133,9 +134,11 @@ class KnockKnockPlugin extends BasePlugin
         $url = craft()->request->getUrl();
         $token = craft()->request->getCookie('siteAccessToken');
         $user = craft()->userSession->getUser();
+		$userIp = craft()->request->getIpAddress();
+		$whitelistIps = explode(',' ,craft()->plugins->getPlugin('knockKnock')->getSettings()->whitelist);
 
         //force challenge for non authenticated site visitors
-        if ((craft()->request->isSiteRequest()) && (!$user) && ($token == '') && (stripos($url, 'knockknock') === FALSE) ) {
+        if ((craft()->request->isSiteRequest()) && (!$user) && ($token == '') && (stripos($url, 'knockknock') === FALSE) && (!in_array($userIp,$whitelistIps)) ) {
             craft()->userSession->setFlash( 'redir', $url);
             $redir = '/knockKnock/whoIsThere';
             craft()->request->redirect($redir);

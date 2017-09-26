@@ -17,7 +17,7 @@ KnockKnock works on Craft 2.4.x and Craft 2.5.x.
 Any one who visits your website will be asked for a password before they can see your website. Perfect for locking down websites in development that are on a public domain.
 
 ## Configuring KnockKnock
-Go to the KnockKnock settings and enter a password. Anyone visiting your website will need to enter the password to see the website. 
+Go to the KnockKnock settings and enter a password. Anyone visiting your website will need to enter the password to see the website. Except for users with a whitelisted ip address.
 
 ## Using KnockKnock
 

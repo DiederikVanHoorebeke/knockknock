@@ -1,5 +1,13 @@
 [
-    {
+	{
+        "version": "1.0.1",
+        "downloadUrl": "https://github.com/dgrigg/knockknock/archive/master.zip",
+        "date": "2017-09-26T10:47:00.000Z",
+        "notes": [
+            "[Added] Ip whitelisting"
+        ]
+    },
+	{
         "version": "1.0.0",
         "downloadUrl": "???",
         "date": "2017-09-12T13:48:43.642Z",

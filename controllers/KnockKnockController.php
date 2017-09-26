@@ -22,7 +22,7 @@
  * @copyright Copyright (c) 2017 Derrick Grigg
  * @link      dgrigg.com
  * @package   KnockKnock
- * @since     1.0.0
+ * @since     1.0.1
  */
 
 namespace Craft;

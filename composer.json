@@ -6,6 +6,10 @@
 		{
 			"name": "Derrick Grigg",
 			"homepage": "dgrigg.com"
+		},
+		{
+			"name": "Diederik Van Hoorebeke",
+			"homepage": "https://github.com/DiederikVanHoorebeke"
 		}
 	],
 	"require": {

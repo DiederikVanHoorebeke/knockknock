@@ -8,9 +8,11 @@
  * @copyright Copyright (c) 2017 Derrick Grigg
  * @link      dgrigg.com
  * @package   KnockKnock
- * @since     1.0.0
+ * @since     1.0.1
  */
 
 return array(
-    'Translate me' => 'To this',
+    'Site locked' => 'Site locked',
+    'Password' => 'Password',
+    'Unlock' => 'Unlock',
 );
