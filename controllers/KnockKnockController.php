@@ -60,7 +60,7 @@ class KnockKnockController extends BaseController
             craft()->request->redirect(craft()->request->getParam('redir'));
         } else {
             $data['redir'] = craft()->request->getParam('redir');
-            $data['error'] = 'Invalid password';
+            $data['error'] = Craft::t('Invalid password.');
             craft()->templates->setTemplateMode(TemplateMode::CP);
             $this->renderTemplate('knockknock/ask', $data);
 

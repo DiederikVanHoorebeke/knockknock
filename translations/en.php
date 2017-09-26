@@ -13,6 +13,4 @@
 
 return array(
     'Site locked' => 'Site locked',
-    'Password' => 'Password',
-    'Unlock' => 'Unlock',
 );

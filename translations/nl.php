@@ -13,6 +13,4 @@
 
 return array(
     'Site locked' => 'Site geblokkeerd',
-    'Password' => 'Wachtwoord',
-    'Unlock' => 'Openen',
 );

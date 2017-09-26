@@ -13,6 +13,4 @@
 
 return array(
     'Site locked' => 'Site verrouillé',
-    'Password' => 'Mot de passe',
-    'Unlock' => 'Ouvrir',
 );

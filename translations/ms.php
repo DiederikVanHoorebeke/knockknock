@@ -13,6 +13,4 @@
 
 return array(
     'Site locked' => 'Tapak dikunci',
-    'Password' => 'Kata laluan',
-    'Unlock' => 'Buka kunci',
 );

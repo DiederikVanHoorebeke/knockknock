@@ -111,7 +111,7 @@ class KnockKnockPlugin extends BasePlugin
     public function registerSiteRoutes()
     {
         return array(
-            'knockKnock/whoIsThere' => array('action' => 'knockKnock/ask')
+            'protected' => array('action' => 'knockKnock/ask')
         );
     }
 
@@ -133,14 +133,14 @@ class KnockKnockPlugin extends BasePlugin
         parent::init();
         $url = craft()->request->getUrl();
         $token = craft()->request->getCookie('siteAccessToken');
-        $user = craft()->userSession->getUser();
+		$user = craft()->userSession->getUser();
 		$userIp = craft()->request->getIpAddress();
 		$whitelistIps = explode(',' ,craft()->plugins->getPlugin('knockKnock')->getSettings()->whitelist);
 
         //force challenge for non authenticated site visitors
-        if ((craft()->request->isSiteRequest()) && (!$user) && ($token == '') && (stripos($url, 'knockknock') === FALSE) && (!in_array($userIp,$whitelistIps)) ) {
+        if ((craft()->request->isSiteRequest()) && (!$user) && ($token == '') && (stripos($url, 'protected') === FALSE) && (!in_array($userIp,$whitelistIps)) ) {
             craft()->userSession->setFlash( 'redir', $url);
-            $redir = '/knockKnock/whoIsThere';
+            $redir = rtrim(craft()->getSiteUrl(),"/").'/protected';
             craft()->request->redirect($redir);
         }
     }
